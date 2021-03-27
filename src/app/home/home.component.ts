@@ -35,11 +35,9 @@ export class HomeComponent {
   constructor(private http: HttpService) { }
 
   public send(): void {
-    console.log(this.loanInfo.value);
     this.http.getPaymentPlan(this.loanInfo.value).subscribe(data => {
       this.dataSource.paginator = this.paginator;
       this.dataSource.data = data;
-      console.log('datasource', this.dataSource);
     }
   );
   }
