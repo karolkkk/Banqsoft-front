@@ -10,12 +10,12 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  getPaymentPlan({paybackTime,amount}) :Observable<PaymentModel>{
+  getPaymentPlan({paybackTime,amount}) :Observable<PaymentModel[]>{
     let params = new HttpParams()
   .set('paybackTime', paybackTime.toString())
   .set('amount', amount.toString());
  
-    return this.http.get<PaymentModel>('https://localhost:44336/home/RatesPlan',{params})
+    return this.http.get<PaymentModel[]>('https://localhost:44336/home/Amortized',{params})
   }
 
 
