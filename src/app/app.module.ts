@@ -16,7 +16,7 @@ import {MatPaginatorModule } from '@angular/material/paginator';
   declarations: [
     AppComponent,
     HomeComponent
-    
+
   ],
   imports: [
     BrowserModule,
@@ -29,8 +29,8 @@ import {MatPaginatorModule } from '@angular/material/paginator';
     MatInputModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatPaginatorModule 
-    
+    MatPaginatorModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
