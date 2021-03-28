@@ -1,20 +1,41 @@
-<h1>Welcome!</h1>
+<h1>Monthly Payment Plan!</h1>
+
 
 <div class="play-container">
-    
+  
+    <p> Please enter your desired payback time (years) and the desired loan amount.</p>
     <form [formGroup]="loanInfo" class="form">
             <mat-form-field appearance="fill">
                 <mat-label>Payback Time:</mat-label>
                 <input matInput
                        formControlName="paybackTime"
-                       type="number" step="1000">
+                       type="number" step="10"
+                       (change) ="updatePaybackTime()">
+                <input 
+                      formControlName="paybackTime"
+                      (change) ="updatePaybackTime()"
+                      type="range" min="0" max ="100">
+                <mat-error *ngIf="loanInfo.controls.paybackTime.hasError('max')">
+                      Payback Time cannot be longer than 100 years
+                </mat-error>
+                      
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Amount:</mat-label>
                 <input matInput
                        formControlName="amount"
+                       (change)="updateAmount()"
                        type="number" step="1000">
+
+                <input 
+                      formControlName="amount"
+                      (change) ="updateAmount()"
+                      type="range" min="0" max ="100000000">
+                <mat-error *ngIf="loanInfo.controls.amount.hasError('max')">
+                      Amount cannot exceed 10000000 money
+                </mat-error>
             </mat-form-field>
+            
             
         <button mat-raised-button color=primary (click)="send()" [disabled]="loanInfo.invalid">Get Your monthly payment plan!</button>
         
