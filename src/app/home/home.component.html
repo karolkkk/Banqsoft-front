@@ -25,14 +25,14 @@
                 <input matInput
                        formControlName="amount"
                        (change)="updateAmount()"
-                       type="number" step="1000">
+                       type="number" step="1000000">
 
                 <input 
                       formControlName="amount"
                       (change) ="updateAmount()"
                       type="range" min="0" max ="100000000">
                 <mat-error *ngIf="loanInfo.controls.amount.hasError('max')">
-                      Amount cannot exceed 10000000
+                      Amount cannot exceed 100000000
                 </mat-error>
             </mat-form-field>
             
