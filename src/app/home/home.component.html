@@ -18,6 +18,9 @@
                 <mat-error *ngIf="loanInfo.controls.paybackTime.hasError('max')">
                       Payback Time cannot be longer than 100 years
                 </mat-error>
+                <mat-error *ngIf="loanInfo.controls.paybackTime.hasError('min')">
+                  Payback Time cannot be shorter than 1 year
+            </mat-error>
                       
             </mat-form-field>
             <mat-form-field appearance="fill">
@@ -34,6 +37,9 @@
                 <mat-error *ngIf="loanInfo.controls.amount.hasError('max')">
                       Amount cannot exceed 100000000
                 </mat-error>
+                <mat-error *ngIf="loanInfo.controls.amount.hasError('min')">
+                  Amount cannot be less than 1
+            </mat-error>
             </mat-form-field>
             
             
